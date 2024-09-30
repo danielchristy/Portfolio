@@ -1,0 +1,143 @@
+/* Reset default styles
+body, h1, h2, h3, p, ul, li, a, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+#me {
+    width: 8%;
+}
+
+nav {
+    width: 200px;
+    background: #f4f4f4;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    /* right: 0;
+    top: 0; */
+}
+
+nav h2 {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    margin-left: 220px; /* Make space for the sidebar */
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.skills img {
+    width: 60px;
+    margin: 5px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+#projects img {
+    width: 60px;
+    margin: 5px;
+}
+
+#projects button {
+    background-color: grey;
+}
+
+.flex-container {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.sociallogos {
+    width: 8%;
+}
+
+.example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+
+.example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a[data-social="linkedin"] {
+    background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] {
+    background-color: #24262a;
+} 
