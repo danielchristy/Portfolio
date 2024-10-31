@@ -1,15 +1,19 @@
-/* Color Variables - Modern Tech */
 :root {
-    --dark-charcoal: #2C3E50; /* Dark muted blue-gray */
-    --cyan: #3498DB; /* Bright but balanced tech blue */
-    --warm-gold: #F1C40F; /* Light gold for accents */
-    --soft-gray: #ECF0F1; /* Very light gray */
-    --ivory: #FFFFFF; /* Pure white background */
+    --dark-charcoal: #2C3E50; 
+    --cyan: #3498DB; 
+    --warm-gold: #F1C40F; 
+    --soft-gray: #ECF0F1; 
+    --ivory: #FFFFFF; 
+    --beaver: #c17c74;
+
+    --bg: #10111F;
+    --size: 15px;
 }
 
 /* Basic styling */
 body {
-    background-color: var(--ivory);
+    /* background-color: var(--ivory); */
+    background-image: url('images/b2t.png');
     color: var(--dark-charcoal);
     font-family: Arial, sans-serif;
     margin: 0;
@@ -20,11 +24,13 @@ body {
 header {
     background-color: var(--dark-charcoal);
     color: var(--ivory);
-    position: relative; 
+    position: sticky;
+    top: 0;
     padding: 10px; 
     display: flex; 
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    z-index: 999; 
 }
 
 header h2 {
@@ -36,6 +42,7 @@ header h2 {
 
 /* Navigation */
 .menu-icon {
+    position: relative;
     cursor: pointer;
     font-size: 24px;
 }
@@ -44,11 +51,11 @@ header h2 {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    position: absolute; 
-    left: 10px; 
-    top: 50px; 
+    position: absolute;
+    right: 10px;
+    top: 50px;
     display: none;
-    background-color: #333; /* Might need to change this color */
+    background-color: var(--dark-charcoal); 
     z-index: 1000; 
     width: 150px; 
     border-radius: 5px; 
@@ -71,7 +78,7 @@ header h2 {
     display: block; 
     padding: 10px; 
     transition: background-color 0.3s; 
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .nav-links a:hover {
@@ -87,60 +94,52 @@ main {
 section {
     max-width: 1150px; 
     margin: 0 auto; 
-    padding: 10px; 
+    padding: 0px;
+    /* padding-top: 35px;  */
 }
 
 /* Skills section */
+.skills {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
 .skill-item {
     position: relative;
     display: inline-block;
-    margin: 5px;
+    margin: 8px;
 }
 
 .skill-item img {
     width: 60px;
 }
 
-.skill-item::after {
-    content: attr(data-skill);
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(44, 62, 80, 0.9);
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 3px;
-    opacity: 0;
-    pointer-events: none;
-    white-space: nowrap;
-    transition: opacity 0.3s ease;
-}
-
-.skill-item:hover::after {
-    background-color: rgba(44, 62, 80, 0.9);
-}
-
 /* Projects section */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     margin: 20px auto; 
     max-width: 1200px; 
 }
 
 .project {
+    flex: 0 1 calc(28% - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid #ccc;
     padding: 15px;
     background-color: var(--soft-gray);
-    text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .project img {
-    width: 100px;
+    width: 100%;
+    max-width: 115px;
     height: auto;
     margin-bottom: 10px;
 }
@@ -160,6 +159,8 @@ section {
 
 .btn:hover {
     background-color: var(--cyan);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 /* Contact Section */
@@ -176,7 +177,6 @@ section {
 
 .contact-icons img {
     width: 40px;
-    filter: hue-rotate(180deg);
     transition: transform 0.3s ease;
 }
 
@@ -184,8 +184,16 @@ section {
     transform: scale(1.1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* body {
+        background-size: auto 90%;
+    } */
+
     header h2 {
         font-size: 20px;
     }
@@ -202,5 +210,28 @@ section {
 
     main {
         padding: 10px;
+    }
+
+    .project-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 0; 
+        width: 100%;
+        /* max-width: 1200px;  */
+    }
+    
+    .project {
+        flex: 0 1 calc(40%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        padding: 15px;
+        background-color: var(--soft-gray);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 }

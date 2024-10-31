@@ -52,57 +52,62 @@
                 frameworks, including Python, Django, HTML, CSS, JavaScript, React,
                 Java, Spring, and SQL (PostgreSQL). I have also gained experience in development tools, 
                 inclduing Visual Studio Code, IntelliJ, and pgAdmin.<br><br>
-                Alongside these technical skills, I have also been applying project
-                management methodologies to ensure successful project execution by
-                fostering collaboration and clear communication within teams.
             </p>
-        
+            
             <div class="skills">
                 <div class="backend">
                     <h3>Backend Development</h3>
-                    <div class="skill-item" data-skill="Python">
-                        <img src="images/python.png" alt="Python">
+                    <div class="skill-item">
+                        <img src="images/python.png" alt="Python" title="Python">
                     </div>
-                    <div class="skill-item" data-skill="Java">
-                        <img src="images/java.png" alt="Java">
+                    <div class="skill-item">
+                        <img src="images/java.png" alt="Java" title="Java">
                     </div>
-                    <div class="skill-item" data-skill="PostgreSQL">
-                        <img src="images/postgresql.png" alt="PostgreSQL">
+                    <div class="skill-item">
+                        <img src="images/postgresql.png" alt="PostgreSQL" title="PostgreSQL">
                     </div>
-                    <div class="skill-item" data-skill="Django">
-                        <img src="images/django.png" alt="Django">
+                    <div class="skill-item">
+                        <img src="images/django.png" alt="Django" title="Django">
                     </div>
-                    <div class="skill-item" data-skill="Spring">
-                        <img src="images/spring.svg" alt="Spring">
+                    <div class="skill-item">
+                        <img src="images/spring.svg" alt="Spring" title="Spring">
                     </div>
                 </div>
         
                 <div class="frontend">
                     <h3>Frontend Development</h3>
-                    <div class="skill-item" data-skill="HTML">
-                        <img src="images/html.png" alt="HTML">
+                    <div class="skill-item">
+                        <img src="images/html.png" alt="HTML" title="HTML">
                     </div>
-                    <div class="skill-item" data-skill="CSS">
-                        <img src="images/css.png" alt="CSS">
+                    <div class="skill-item">
+                        <img src="images/css.png" alt="CSS" title="CSS">
                     </div>
-                    <div class="skill-item" data-skill="JavaScript">
-                        <img src="images/javascript.png" alt="JavaScript">
+                    <div class="skill-item">
+                        <img src="images/javascript.png" alt="JavaScript" title="JavaScript">
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/react.png" alt="React" title="React">
                     </div>
                 </div>
         
                 <div class="development_tools">
                     <h3>Development Tools</h3>
-                    <div class="skill-item" data-skill="Visual Studio Code">
-                        <img src="images/visualstudio.png" alt="Visual Studio Code">
+                    <div class="skill-item">
+                        <img src="images/visualstudio.png" alt="Visual Studio Code" title="Visual Studio Code">
                     </div>
-                    <div class="skill-item" data-skill="IntelliJ">
-                        <img src="images/intellij.png" alt="IntelliJ">
+                    <div class="skill-item">
+                        <img src="images/intellij.png" alt="IntelliJ" title="IntelliJ">
                     </div>
-                    <div class="skill-item" data-skill="pgAdmin">
-                        <img src="images/pgadmin.png" alt="pgAdmin">
+                    <div class="skill-item">
+                        <img src="images/pgadmin.png" alt="pgAdmin" title="pgAdmin">
                     </div>
                 </div>
             </div>
+            <p>
+                Alongside these technical skills, I have also been applying project
+                management methodologies to ensure successful project execution by
+                fostering collaboration and clear communication within teams.
+            </p>
         </section>
 
         <section id="projects">
@@ -132,6 +137,14 @@
                         View Project on GitHub
                     </a>
                 </div>
+                <div class="project">
+                    <img src="images/chorely2.png" alt="Chorely">
+                    <h4>Chorely</h4>
+                    <p>Chorely is a React-based project that offers a CRUD API for managing tasks, featuring filtering and sorting capabilities.</p>
+                    <a href="https://github.com/Gage-BCCA/chorely" target="_blank" class="btn">
+                        View Project on GitHub
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -155,19 +168,27 @@
             const menuIcon = document.querySelector('.menu-icon');
             const navLinks = document.querySelector('.nav-links');
 
-            // Toggle the dropdown menu on icon click
+            // Toggle dropdown menu on icon click
             menuIcon.addEventListener('click', () => {
-                menuIcon.classList.toggle('active'); // Toggle active class
-                navLinks.classList.toggle('active'); // Toggle dropdown visibility
+                menuIcon.classList.toggle('active'); 
+                navLinks.classList.toggle('active'); 
             });
 
-            // Close the dropdown when a link is clicked
+            // Close dropdown when a link is clicked
             navLinks.addEventListener('click', (event) => {
                 if (event.target.tagName === 'A') {
-                    menuIcon.classList.remove('active'); // Remove active class
-                    navLinks.classList.remove('active'); // Hide dropdown
+                    menuIcon.classList.remove('active'); 
+                    navLinks.classList.remove('active'); 
                 }
             });
+
+            // Close dropdown if menu icon clicked and then mouse leaves nav-links
+            navLinks.addEventListener('mouseleave', () => {
+                    menuIcon.classList.remove('active'); 
+                    navLinks.classList.remove('active'); 
+                }
+            );
+            
         });
     </script>
 
